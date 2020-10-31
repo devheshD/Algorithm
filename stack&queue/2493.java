@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.Stack;
 
 class StackInfo {
-	long index, height;
+	int index, height;
 	
-	public StackInfo(long index, long height) {
+	public StackInfo(int index, int height) {
 		this.index = index;
 		this.height = height;
 	}
@@ -18,21 +18,21 @@ class StackInfo {
 
 public class Main {
 	static int N;
-	static long[] height;
+	static int[] height;
 	
 	public static void main(String[] args) throws IOException {
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    	N = Integer.parseInt(br.readLine());	// 탑의 개수
+    	N = Integer.parseInt(br.readLine());	// ?�의 개수
     	List<Integer> answer = new ArrayList<Integer>();
-    	// 탑의 높이 정보 입력
+    	// ?�의 ?�이 ?�보 ?�력
     	String[] input = br.readLine().split(" ");
-    	height = new long[N];					
+    	height = new int[N];					
     	for (int i = 0; i < N; i++) {
     		height[i] = Integer.parseInt(input[i]);
     	}
     	Stack<StackInfo> stack = new Stack<StackInfo>();
     	stack.add(new StackInfo(1, height[0]));
-    	// 맨 왼쪽의 탑은 수신받을 곳이 없기 때문에 0저장
+    	// �??�쪽???��? ?�신받을 곳이 ?�기 ?�문??0?�??
     	answer.add(0);
     	boolean flag = true;
     	
@@ -40,13 +40,13 @@ public class Main {
     	for (int i = 1; i < N; i++) {
     		while (!stack.isEmpty()) {
     			StackInfo info = stack.peek();
-    			// 스택에 들어있는 탑의 높이보다 현재 인덱스의 탑의 높이가 높은 경우
+    			// ?�택???�어?�는 ?�의 ?�이보다 ?�재 ?�덱?�의 ?�의 ?�이가 ?��? 경우
     			if (info.height <= height[i]) {
     				stack.pop();
     				flag = true;
     			} else {
-    				// 반대인경우 스택에 들어있는 탑이 위치했던 인덱스 저장
-    				answer.add((int) info.index);
+    				// 반�??�경???�택???�어?�는 ?�이 ?�치?�던 ?�덱???�??
+    				answer.add(info.index);
     				stack.push(new StackInfo(i + 1, height[i]));
     				flag = false;
     				break;
