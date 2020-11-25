@@ -10,18 +10,18 @@ public String solution(String[] participant, String[] completion) {
         	if (map.get(name) == null) {
         		map.put(name, 1);
         	} 
-        	// Áßº¹µÈ ÀÌ¸§ Á¦°Å
+        	// ì¤‘ë³µëœ ì´ë¦„ ì œê±°
         	else {
         		map.put(name, map.get(name) + 1);
         	}
         }
         
-        // ¿ÏÁÖÇÑ »ç¶÷ÀÇ value°ª °¨¼Ò
+        // ì™„ì£¼í•œ ì‚¬ëŒì˜ valueê°’ ê°ì†Œ
         for (String name : completion) {
         	map.put(name, map.get(name) - 1);
         }
         
-        // mapÀÇ value°¡ 1ÀÏ °æ¿ì ¿ÏÁÖÇÏÁö ¸øÇÑ ¼±¼ö
+        // mapì˜ valueê°€ 1ì¼ ê²½ìš° ì™„ì£¼í•˜ì§€ ëª»í•œ ì„ ìˆ˜
         for (String name : map.keySet()) {
         	if (map.get(name) == 1) {
         		answer = name;
@@ -29,7 +29,7 @@ public String solution(String[] participant, String[] completion) {
         	}
         		
         }
-        
+         
         return answer;
     }	
 }
