@@ -25,8 +25,8 @@ public class Solution {
         		if (alphabet[trees.charAt(i) - 'A']) {
         			sb.append(trees.charAt(i));
         		}
-        	}
-        	
+		}
+		
         	if (compare(sb, skill)) {
         		answer++;
         	}
