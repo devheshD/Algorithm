@@ -86,7 +86,7 @@ public class Main {
 			
 			sum += min;
 		}
-		
+		 
 		answer = Math.min(answer, sum);
 	}
 
