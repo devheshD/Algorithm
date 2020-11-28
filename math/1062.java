@@ -57,7 +57,7 @@ public class Main {
 			}
 		}
 	}
-
+ 
 	private static void search() {
 		int answer_cnt = 0;
 		
