@@ -80,7 +80,7 @@ public class Main {
 		}
 		
 		answer = Math.max(answer_cnt, answer);
-		
+	
 	}
 
 	private static boolean skip(int i) {
